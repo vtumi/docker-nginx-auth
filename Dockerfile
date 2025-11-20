@@ -10,4 +10,4 @@ COPY /root /
 
 STOPSIGNAL SIGQUIT
 
-CMD ["/usr/bin/spawn-fcgi", "-s", "/var/run/nginx-auth/sock", "-M", "666", "-n", "/usr/bin/nginx-auth", "/config/nginx-auth.conf"]
+CMD ["/usr/bin/spawn-fcgi", "-u", "nobody", "-s", "/var/run/nginx-auth/sock", "-M", "666", "-n", "/usr/bin/nginx-auth", "/config/nginx-auth.conf"]
